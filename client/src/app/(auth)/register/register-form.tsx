@@ -1,19 +1,22 @@
-'use client'
+'use client';
 
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
-import { Button } from '@/components/ui/button'
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
-  FormMessage
-} from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
-import { RegisterBody, RegisterBodyType } from '@/schemaValidations/auth.schema'
-import envConfig from '@/config'
+  FormMessage,
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import {
+  RegisterBody,
+  RegisterBodyType,
+} from '@/schemaValidations/auth.schema';
+import envConfig from '@/config';
 
 const RegisterForm = () => {
   const form = useForm<RegisterBodyType>({
@@ -22,9 +25,9 @@ const RegisterForm = () => {
       email: '',
       name: '',
       password: '',
-      confirmPassword: ''
-    }
-  })
+      confirmPassword: '',
+    },
+  });
 
   // 2. Define a submit handler.
   async function onSubmit(values: RegisterBodyType) {
@@ -33,12 +36,12 @@ const RegisterForm = () => {
       {
         body: JSON.stringify(values),
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        method: 'POST'
+        method: 'POST',
       }
-    ).then((res) => res.json())
-    console.log(result)
+    ).then((res) => res.json());
+    console.log(result);
   }
   return (
     <Form {...form}>
@@ -104,7 +107,7 @@ const RegisterForm = () => {
         </Button>
       </form>
     </Form>
-  )
-}
+  );
+};
 
-export default RegisterForm
+export default RegisterForm;
