@@ -1,14 +1,7 @@
-import React from 'react';
-
-export default function layout({
+export default function AuthLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <div>
-      <header>Header</header>
-      {children}
-    </div>
-  );
+  return children;
 }

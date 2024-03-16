@@ -1,14 +1,3 @@
-import React from 'react';
-
-export default function layout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <div>
-      {children}
-      <footer>Footer</footer>
-    </div>
-  );
+export default function LoginPage() {
+  return <div>Login page</div>;
 }

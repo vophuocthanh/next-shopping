@@ -1,23 +1,23 @@
 import ButtonRedirect from '@/app/components/ButtonRedirect';
-import { ModeToggle } from '@/components/toggle-mode';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 
-// const isAuth = false;
+const isAuth = false;
 export default function Home() {
   // if (!isAuth) {
-  //   redirect('/login');
+  //   redirect('/login')
   // }
   return (
     <main>
-      <Link
-        href='/login'
-        className='text-white h-10 w-20 bg-green-500 p-6 text-center items-center flex rounded'
-      >
-        Login
-      </Link>
-      <ModeToggle></ModeToggle>
-      <ButtonRedirect></ButtonRedirect>
+      <ul>
+        <li>
+          <Link href={'/login'}>Login</Link>
+        </li>
+        <li>
+          <Link href={'/register'}>Register</Link>
+        </li>
+      </ul>
+      {/* <ButtonRedirect /> */}
     </main>
   );
 }
